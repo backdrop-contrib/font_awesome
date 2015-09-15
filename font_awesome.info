@@ -1,0 +1,6 @@
+name = Font Awesome
+description = A simple module to include Font Awesome Icons via CSS classes for usage in your website
+version = 1.x-1.1
+backdrop = 1.x
+type = module
+configure = admin/config/user-interface/font-awesome

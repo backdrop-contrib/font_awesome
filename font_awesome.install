@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file font_awesome.install
+ * Installation and update functions for the font_awesome module
+ * Module
+ */
+
+
+function font_awesome_update_1000() {
+  $config = config('font_awesome.settings');
+  $config->set('font_awesome_1', update_variable_get('font_awesome_1'));
+  $config->save();
+
+  // Delete variables.
+  update_variable_del('font_awesome_1');
+}
