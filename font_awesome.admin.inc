@@ -1,39 +1,21 @@
 <?php
-
 /**
  * @file
- * Contains the administration pages for Font Awesome Icons.
- *
+ * Administration page callbacks for the Font Awesome module.
  */
-
-function font_awesome_admin_settings($form, &$form_state) {
-
-  $form['font_awesome_1'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Use Font Awesome Icons from CDN in your website'),
-    '#description' => t('http://fontawesome.io'),
-    '#default_value' => config_get('font_awesome.settings', 'font_awesome_1'),
-  );
-
-  $form['actions']['#type'] = 'actions';
-  $form['actions']['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save configuration'),
-  );
-  return $form;
-}
 
 /**
- * Submit handler for module_settings_form().
+ * Form constructor for the Font Awesome settings form.
  */
-function font_awesome_admin_settings_submit($form, &$form_state) {
-$config = config('font_awesome.settings');
-foreach ($form_state['values'] as $key => $value)
-{
-$config->set($key, $value);
+function font_awesome_admin_form($form, &$form_state) {
+  $form['enabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use Font Awesome icons in your website'),
+    '#description' => t('This will load the necessary CSS for you to start adding icons to your site. See <a href="http://fontawesome.io/examples/">http://fontawesome.io/examples/</a> for examples.'),
+    '#default_value' => config_get('font_awesome.settings', 'enabled'),
+  );
+
+  $form['#config'] = 'font_awesome.settings';
+  return system_settings_form($form);
 }
 
-$config->save();
-backdrop_set_message(t('The configuration options have been saved.'));
-}
-?>
