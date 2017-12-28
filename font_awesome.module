@@ -1,50 +1,46 @@
 <?php
 /**
-* @file
-* Basic Module file.
-*
-*/
+ * @file
+ * Include Font Awesome icons via CSS classes in your website.
+ */
 
 /**
  * Implements hook_config_info().
  */
 function font_awesome_config_info() {
-  $prefixes['font_awesome.settings'] = array(
-    'label' => t('font_awesome settings'),
-    'group' => t('configuration'),
+  return array(
+    'font_awesome.settings' => array(
+      'label' => t('Font Awesome settings'),
+      'group' => t('Configuration'),
+    ),
   );
-  return $prefixes;
 }
 
 /**
  * Implements hook_init().
  */
-
 function font_awesome_init() {
-  $module_path = backdrop_get_path('module', 'font_awesome');
-  $form1 = config_get('font_awesome.settings', 'font_awesome_1');
-
-if ($form1 > 0)
-{
-backdrop_add_css("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css", array('type' => 'external', 'scope' => 'footer', 'every_page' => TRUE, 'preprocess' => TRUE));
-}
-
+  if (config_get('font_awesome.settings', 'enabled')) {
+    backdrop_add_css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(
+      'type' => 'external',
+      'every_page' => TRUE,
+    ));
+  }
 }
 
 /**
-* Implementation of hook_menu().
-*/
+ * Implements hook_menu().
+ */
 function font_awesome_menu() {
-  $items = array();
-  // Admin settings.
   $items['admin/config/user-interface/font-awesome'] = array(
-    'title' => 'Font Awesome Icons',
-    'description' => 'Include Font Awesome Icons via CSS classes for usage in your website',
+    'title' => 'Font Awesome',
+    'description' => 'Include Font Awesome icons via CSS classes in your website.',
     'page callback' => 'backdrop_get_form',
-    'page arguments' => array('font_awesome_admin_settings'),
+    'page arguments' => array('font_awesome_admin_form'),
     'access arguments' => array('administer site configuration'),
-    'page arguments' => array('font_awesome_admin_settings', NULL),
     'file' => 'font_awesome.admin.inc',
   );
+
   return $items;
 }
+

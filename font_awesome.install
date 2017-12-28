@@ -1,17 +1,24 @@
 <?php
-
 /**
- * @file font_awesome.install
- * Installation and update functions for the font_awesome module
- * Module
+ * @file
+ * Install, update, and uninstall functions for the Font Awesome module.
  */
 
-
-function font_awesome_update_1000() {
+/**
+ * Implements hook_update_N().
+ */
+function font_awesome_update_1001(&$sandbox) {
+  // Update variable name.
   $config = config('font_awesome.settings');
-  $config->set('font_awesome_1', update_variable_get('font_awesome_1'));
+  $config->set('enabled', $config->get('font_awesome_1'));
+  $config->clear('font_awesome_1');
   $config->save();
-
-  // Delete variables.
-  update_variable_del('font_awesome_1');
 }
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function font_awesome_update_last_removed() {
+  return 1000;
+}
+

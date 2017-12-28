@@ -1,4 +1,5 @@
 {
-    "_config_name": "font_awesome.settings",
-    "font_awesome_1": ""
+  "_config_name": "font_awesome.settings",
+  "enabled": false
 }
+
