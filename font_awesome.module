@@ -20,11 +20,18 @@ function font_awesome_config_info() {
  * Implements hook_init().
  */
 function font_awesome_init() {
-  if (config_get('font_awesome.settings', 'enabled')) {
-    backdrop_add_css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(
-      'type' => 'external',
-      'every_page' => TRUE,
-    ));
+  $options = array(
+    'type' => 'external',
+    'every_page' => TRUE,
+  );
+
+  switch (config_get('font_awesome.settings', 'fontawesome')) {
+    case 'v4':
+      backdrop_add_css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', $options);
+    break;
+    case 'v5':
+      backdrop_add_js('https://use.fontawesome.com/releases/v5.0.2/js/all.js', $options);
+    break;
   }
 }
 

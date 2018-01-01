@@ -7,6 +7,22 @@
 /**
  * Implements hook_update_N().
  */
+function font_awesome_update_1100(&$sandbox) {
+  // Update config.
+  $config = config('font_awesome.settings');
+  if ($config->get('enabled') == TRUE) {
+    $config->set('fontawesome', 'v4');
+  }
+  else {
+    $config->set('fontawesome', '');
+  }
+  $config->clear('enabled');
+  $config->save();
+}
+
+/**
+ * Implements hook_update_N().
+ */
 function font_awesome_update_1001(&$sandbox) {
   // Update variable name.
   $config = config('font_awesome.settings');

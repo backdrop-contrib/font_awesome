@@ -8,11 +8,16 @@
  * Form constructor for the Font Awesome settings form.
  */
 function font_awesome_admin_form($form, &$form_state) {
-  $form['enabled'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Use Font Awesome icons in your website'),
-    '#description' => t('This will load the necessary CSS for you to start adding icons to your site. See <a href="http://fontawesome.io/examples/">http://fontawesome.io/examples/</a> for examples.'),
-    '#default_value' => config_get('font_awesome.settings', 'enabled'),
+  $form['fontawesome'] = array(
+    '#type' => 'radios',
+    '#title' => t('Enable Font Awesome icons'),
+    '#description' => t('Load the necessary FontAwesome CSS/JS. See the provided links for examples of how to actualy add icons.'),
+    '#options' => array(
+      '' => t('Disabled'),
+      'v4' => t('v4 (<a href="http://fontawesome.io/examples/" target="_blank">fontawesome.io</a>)'),
+      'v5' => t('v5 (<a href="https://fontawesome.com/how-to-use/svg-with-js" target="_blank">fontawesome.com</a>)'),
+    ),
+    '#default_value' => config_get('font_awesome.settings', 'fontawesome'),
   );
 
   $form['#config'] = 'font_awesome.settings';
