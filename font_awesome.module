@@ -24,7 +24,7 @@ function font_awesome_init() {
   if (config_get('font_awesome.settings', 'pseudo')) {
     backdrop_add_js("jQuery(document).ready(function($) {
       window.FontAwesomeConfig.searchPseudoElements = true;
-      /* Added for better performance. */
+      /* Added for better performance. See https://fontawesome.com/how-to-use/font-awesome-api#configuration for details. */
       window.FontAwesomeConfig.observeMutations = false;
     });", array(
       'type' => 'inline',
