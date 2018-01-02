@@ -22,7 +22,7 @@ function font_awesome_admin_form($form, &$form_state) {
   $form['pseudo'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use CSS pseudo-elements'),
-    '#description' => t("Add icons to pseudo-elements using CSS (for when you can't edit the HTML/markup directly). See <a href=\"https://fontawesome.com/how-to-use/svg-with-js#pseudo-elements\">fontawesome.com</a> for details."),
+    '#description' => t("Add icons to pseudo-elements using CSS (for when you can't edit the HTML/markup directly). See <a href=\"https://fontawesome.com/how-to-use/svg-with-js#pseudo-elements\" target=\"_blank\">fontawesome.com</a> for details."),
     '#default_value' => config_get('font_awesome.settings', 'pseudo'),
     '#states' => array(
       'visible' => array(
