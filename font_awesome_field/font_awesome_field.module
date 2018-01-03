@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Provides a field formatter for displaying Font Awesome icons.
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function font_awesome_field_field_formatter_info() {
+  return array(
+    'font_awesome' => array(
+      'label' => t('Font Awesome icon'),
+      'field types' => array('text'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function font_awesome_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  foreach ($items as $delta => $item) {
+    $classes = array();
+    $strings = explode(' ', $item['safe_value']);
+
+    // Convert strings to classes.
+    foreach ($strings as $string) {
+      $classes[] = backdrop_html_class($string);
+    }
+
+    // Output span element with classes to render Font Awesome icon.
+    $element[$delta] = array(
+      '#markup' => '<span class="' . implode(' ', $classes) . '"></span>',
+    );
+  }
+
+  return $element;
+}
+

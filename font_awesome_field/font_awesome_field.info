@@ -1,0 +1,7 @@
+name = Font Awesome Field
+description = Provides a field formatter for displaying Font Awesome icons.
+backdrop = 1.x
+type = module
+dependencies[] = font_awesome
+package = Fields
+
