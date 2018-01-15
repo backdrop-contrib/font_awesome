@@ -5,10 +5,9 @@
  */
 
 /**
- * Implements hook_update_N().
+ * Update config.
  */
 function font_awesome_update_1100(&$sandbox) {
-  // Update config.
   $config = config('font_awesome.settings');
   if ($config->get('enabled') == TRUE) {
     $config->set('fontawesome', 'v4');
@@ -21,10 +20,9 @@ function font_awesome_update_1100(&$sandbox) {
 }
 
 /**
- * Implements hook_update_N().
+ * Update variable name.
  */
 function font_awesome_update_1001(&$sandbox) {
-  // Update variable name.
   $config = config('font_awesome.settings');
   $config->set('enabled', $config->get('font_awesome_1'));
   $config->clear('font_awesome_1');
