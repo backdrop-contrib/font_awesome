@@ -42,7 +42,7 @@ function font_awesome_init() {
       backdrop_add_css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', $options);
     break;
     case 'v5':
-      backdrop_add_js('https://use.fontawesome.com/releases/v5.0.4/js/all.js', $options);
+      backdrop_add_js('https://use.fontawesome.com/releases/v5.0.13/js/all.js', $options);
     break;
   }
 }
