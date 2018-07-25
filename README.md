@@ -9,7 +9,7 @@ You can use Font Awesome icons in your own module/theme with the following code:
 ``` php
 if (module_exists('font_awesome')) {
   // Add Font Awesome CSS classes to your HTML here.
-  // See http://fontawesome.io/examples/ for examples.
+  // See https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use for examples.
 }
 ```
 
@@ -38,7 +38,7 @@ Credits
 -------
 
 - Ported to Backdrop CMS by Andy Martha (https://github.com/biolithic)
-- Uses Dave Gandy's Font Awesome project (http://fontawesome.io)
+- Uses Dave Gandy's Font Awesome project (https://fontawesome.com)
 
 License
 -------

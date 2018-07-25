@@ -5,6 +5,13 @@
  */
 
 /**
+ * Remove 'pseudo' config value.
+ */
+function font_awesome_update_1101(&$sandbox) {
+  config_clear('font_awesome.settings', 'pseudo');
+}
+
+/**
  * Update config.
  */
 function font_awesome_update_1100(&$sandbox) {

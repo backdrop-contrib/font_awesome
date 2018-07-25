@@ -20,19 +20,7 @@ function font_awesome_config_info() {
  * Implements hook_init().
  */
 function font_awesome_init() {
-  // Enable CSS pseudo-element icons.
-  if (config_get('font_awesome.settings', 'pseudo')) {
-    backdrop_add_js("jQuery(document).ready(function($) {
-      window.FontAwesomeConfig.searchPseudoElements = true;
-      /* Added for better performance. See https://fontawesome.com/how-to-use/font-awesome-api#configuration for details. */
-      window.FontAwesomeConfig.observeMutations = false;
-    });", array(
-      'type' => 'inline',
-      'every_page' => TRUE,
-    ));
-  }
-
-  // Add FontAwesome CSS/JS.
+  // Add FontAwesome CSS.
   $options = array(
     'type' => 'external',
     'every_page' => TRUE,
@@ -42,7 +30,7 @@ function font_awesome_init() {
       backdrop_add_css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', $options);
     break;
     case 'v5':
-      backdrop_add_js('https://use.fontawesome.com/releases/v5.0.13/js/all.js', $options);
+      backdrop_add_css('https://use.fontawesome.com/releases/v5.2.0/css/all.css', $options);
     break;
   }
 }
