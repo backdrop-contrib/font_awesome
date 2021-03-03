@@ -11,7 +11,7 @@ function font_awesome_field_field_formatter_info() {
   return array(
     'font_awesome' => array(
       'label' => t('Font Awesome icon'),
-      'field types' => array('text'),
+      'field types' => array('text', 'list_text'),
     ),
   );
 }
@@ -24,7 +24,15 @@ function font_awesome_field_field_formatter_view($entity_type, $entity, $field, 
 
   foreach ($items as $delta => $item) {
     $classes = array();
-    $strings = explode(' ', $item['safe_value']);
+    switch ($field['type']) {
+      case 'text':
+        $value = $item['safe_value'];
+        break;
+      case 'list_text':
+        $value = $item['value'];
+        break;
+    }
+    $strings = explode(' ', $value);
 
     // Convert strings to classes.
     foreach ($strings as $string) {
