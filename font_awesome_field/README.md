@@ -12,8 +12,8 @@ Installation
 - Install this module using the official Backdrop CMS instructions at
   https://backdropcms.org/guide/modules
 
-- Add a 'Text (short)' field to your entity and set its field formatter to 'Font
-  Awesome icon'.
+- Add a 'Text (short)' or 'List (text)' field to your entity and set its field
+  formatter to 'Font Awesome icon'.
 
 - When creating an entity with this field, enter the Font Awesome classes into
   the field (e.g. 'fa fa-camera-retro' (v4) or 'fas fa-camera-retro' (v5)).
