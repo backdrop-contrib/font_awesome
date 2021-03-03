@@ -28,10 +28,13 @@ function font_awesome_init() {
   switch (config_get('font_awesome.settings', 'fontawesome')) {
     case 'v4':
       backdrop_add_css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', $options);
-    break;
+      break;
     case 'v5':
       backdrop_add_css('https://use.fontawesome.com/releases/v5.2.0/css/all.css', $options);
-    break;
+      break;
+    case 'v5.15':
+      backdrop_add_css('https://use.fontawesome.com/releases/v5.15.2/css/all.css', $options);
+      break;
   }
 }
 
