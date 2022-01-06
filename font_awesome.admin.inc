@@ -15,6 +15,7 @@ function font_awesome_admin_form($form, &$form_state) {
     '#options' => array(
       '' => t('Disabled'),
       'v4' => t('<a href="https://fontawesome.com/v4.7.0/examples/" target="_blank">v4</a>'),
+      'v5+shims' => t('<a href="https://fontawesome.com/v5.15/how-to-use/graphql-api/objects/shim" target="_blank">v5 + v4 shims</a>'),
       'v5' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v5</a>'),
     ),
     '#default_value' => config_get('font_awesome.settings', 'fontawesome'),
