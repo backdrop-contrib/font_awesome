@@ -32,7 +32,7 @@ https://github.com/backdrop-contrib/font_awesome/issues
 Current Maintainers
 -------------------
 
-- Peter Anderson (https://github.com/BWPanda)
+- Looking for a maintainer...
 
 Credits
 -------
