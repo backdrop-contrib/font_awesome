@@ -32,7 +32,7 @@ https://github.com/backdrop-contrib/font_awesome/issues
 Current Maintainers
 -------------------
 
-- Looking for a maintainer...
+- [Martin Price](https://github.com/yorkshire-pudding) - [System Horizons Ltd](https://www.systemhorizons.co.uk)
 
 Credits
 -------
