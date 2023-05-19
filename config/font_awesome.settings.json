@@ -1,5 +1,6 @@
 {
   "_config_name": "font_awesome.settings",
-  "fontawesome": "v5"
+  "fontawesome": "v5",
+  "v4_shims": 0
 }
 

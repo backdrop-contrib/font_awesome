@@ -37,9 +37,17 @@ function font_awesome_update_1001(&$sandbox) {
 }
 
 /**
+ * Add v4_shim option to settings and initialize.
+ */
+function font_awesome_update_1002(&$sandbox) {
+  $config = config('font_awesome.settings');
+  $config->set('v4_shim', 0);
+  $config->save();
+}
+
+/**
  * Implements hook_update_last_removed().
  */
 function font_awesome_update_last_removed() {
   return 1000;
 }
-
