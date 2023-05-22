@@ -5,6 +5,15 @@
  */
 
 /**
+ * Add v4_shim option to settings and initialize.
+ */
+function font_awesome_update_1102(&$sandbox) {
+  $config = config('font_awesome.settings');
+  $config->set('v4_shim', 0);
+  $config->save();
+}
+
+/**
  * Remove 'pseudo' config value.
  */
 function font_awesome_update_1101(&$sandbox) {
@@ -42,4 +51,3 @@ function font_awesome_update_1001(&$sandbox) {
 function font_awesome_update_last_removed() {
   return 1000;
 }
-
