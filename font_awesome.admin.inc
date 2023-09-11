@@ -20,6 +20,7 @@ function font_awesome_admin_form($form, &$form_state) {
       'v4' => t('<a href="https://fontawesome.com/v4.7.0/examples/" target="_blank">v4</a>'),
       'v5' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v5.2</a>'),
       'v5.15' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v5.15</a>'),
+      'v6.4' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v6.4</a>'),
     ),
     '#default_value' => $config->get('fontawesome'),
   );
@@ -33,6 +34,7 @@ function font_awesome_admin_form($form, &$form_state) {
       'visible' => array(
         array(':input[name="fontawesome"]' => array('value' => 'v5')),
         array(':input[name="fontawesome"]' => array('value' => 'v5.15')),
+        array(':input[name="fontawesome"]' => array('value' => 'v6.4')),
       ),
     ),
   );
