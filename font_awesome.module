@@ -43,6 +43,13 @@ function font_awesome_init() {
         backdrop_add_css('https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css', $options);
       }
       break;
+
+    case 'v6.4':
+      backdrop_add_css('https://use.fontawesome.com/releases/v6.4.2/css/all.css', $options);
+      if (config_get('font_awesome.settings', 'v4_shims')) {
+        backdrop_add_css('https://use.fontawesome.com/releases/v6.4.2/css/v4-shims.css', $options);
+      }
+      break;
   }
 }
 
