@@ -11,21 +11,30 @@ function font_awesome_admin_form($form, &$form_state) {
   $form['#config'] = 'font_awesome.settings';
   $config = config('font_awesome.settings');
 
+  $form['description'] = array(
+    '#type' => 'item',
+    '#description' => t('Define the source for the Font Awesome CSS file. See the <a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">Font Awesome documentation</a> for examples of how to actually add icons. If you are using version 4, see the <a href="https://fontawesome.com/v4/examples/" target="_blank">Font Awesome 4 documentation</a> instead.'),
+  );
+
   $form['fontawesome'] = array(
     '#type' => 'radios',
-    '#title' => t('Enable Font Awesome icons'),
-    '#description' => t('Load the necessary FontAwesome CSS. See the provided links for examples of how to actually add icons.'),
+    '#title' => t('Set Font Awesome icon source'),
     '#options' => array(
-      '' => t('Disabled'),
-      'v4' => t('<a href="https://fontawesome.com/v4.7.0/examples/" target="_blank">v4</a>'),
-      'v5' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v5.2</a>'),
-      'v5.15' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v5.15</a>'),
-      'v6.4' => t('<a href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use" target="_blank">v6.4</a>'),
+      '' => t('None'),
+      'v4' => 'v4.7',
+      'v5' => 'v5.2',
+      'v5.15' => 'v5.15',
+      'v6.4' => 'v6.4',
       'local' => t('Local - add the location below.'),
-      'theme' => t('Theme - add as part of the theme.'),
+      'other' => t('Other location'),
     ),
     '#default_value' => $config->get('fontawesome'),
   );
+
+  // Add descriptions for non-standard options.
+  $form['fontawesome']['']['#description'] = t('Prevent icons from being loaded without disabling the module.');
+  $form['fontawesome']['local']['#description'] = t('Adding a local version of the Font Awesome library can enable you to provide a slimmed down version with just the icons needed for the site, thereby improving site performance.');
+  $form['fontawesome']['other']['#description'] = t('If the Font Awesome library is added elsewhere, such as within the theme, then it does not need to be loaded by this module.');
 
   $form['local_path'] = array(
     '#type' => 'textfield',
@@ -44,7 +53,7 @@ function font_awesome_admin_form($form, &$form_state) {
   $form['v4_shims'] = array(
     '#type' => 'checkbox',
     '#title' => t('Include v4 shims'),
-    '#description' => t('Checking this box will allow you to use FontAwesome v4 icon names with FontAwesome v5. <a href="https://fontawesome.com/v5.15/how-to-use/graphql-api/objects/shim" target="_blank">Details here.</a>'),
+    '#description' => t('Checking this box will allow you to use Font Awesome v4 icon names with Font Awesome v5 or v6. <a href="https://fontawesome.com/docs/apis/graphql/objects#shim" target="_blank">Details here.</a>'),
     '#default_value' => $config->get('v4_shims'),
     '#states' => array(
       'visible' => array(

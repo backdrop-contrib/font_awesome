@@ -56,8 +56,10 @@ function font_awesome_init() {
       );
       backdrop_add_css(config_get('font_awesome.settings', 'local_path'), $options);
       break;
-    case 'theme':
-      // If added by theme, then we don't need to add again.
+    case 'other':
+    case '':
+      // If added in 'other' location, we don't need to add here; if set to
+      // None, then no need to load.
       break;
   }
 }
