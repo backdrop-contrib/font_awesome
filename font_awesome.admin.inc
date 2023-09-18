@@ -42,7 +42,7 @@ function font_awesome_admin_form($form, &$form_state) {
   $form['source']['fontawesome']['local']['#description'] = t('Adding a local version of the Font Awesome library can enable you to provide a slimmed down version with just the icons needed for the site, thereby improving site performance.');
   $form['source']['fontawesome']['other']['#description'] = t('If the Font Awesome library is added elsewhere, such as within the theme, then it does not need to be loaded by this module.');
 
-  $form['local_path'] = array(
+  $form['source']['local_path'] = array(
     '#type' => 'textfield',
     '#title' => t('Local path'),
     '#description' => t('Add the file path relative to the root of your Backdrop installation. You must ensure that the paths to font files referenced in the CSS are valid; these are normally at the end of the file.'),
