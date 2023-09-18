@@ -19,9 +19,24 @@ Installation
 - Install this module using the official Backdrop CMS instructions at
   https://backdropcms.org/guide/modules
 
+- If needed, also enable the included Font Awesome Field sub-module.
+
 - Visit the configuration page under Administration > Configuration > User
-  Interface > Font Awesome (admin/config/user-interface/font-awesome) to enable
-  the functionality for your site.
+  Interface > Font Awesome (admin/config/user-interface/font-awesome) to set
+  the source for the Font Awesome CSS file.
+
+Advanced Usage
+--------------
+
+On the configuration page, you can select 'Local' to define an alternative
+local path for the Font Awesome CSS file. This enables you to load a custom
+version of the library, such as a slimmed down version with only the icons
+needed for your site.
+
+You can also select 'Other' if the icons will be loaded via the theme or
+possibly a custom module, but you still need this module to enable Font Awesome
+Field, as a dependency to another module or to enable enhancements within
+another module. Loading this way also enables you to customise the library.
 
 Issues
 ------
@@ -33,6 +48,7 @@ Current Maintainers
 -------------------
 
 - [Martin Price](https://github.com/yorkshire-pudding) - [System Horizons Ltd](https://www.systemhorizons.co.uk)
+- Collaboration and co-maintainers welcome!
 
 Credits
 -------
@@ -45,4 +61,3 @@ License
 
 This project is GPL v2 software. See the LICENSE.txt file in this directory for
 complete text.
-
