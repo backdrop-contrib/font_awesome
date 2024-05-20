@@ -38,7 +38,7 @@ function font_awesome_admin_form($form, &$form_state) {
   );
 
   // Add descriptions for non-standard options.
-  $form['source']['fontawesome']['']['#description'] = t('Prevent icons from being loaded without disabling the module.');
+  $form['source']['fontawesome']['']['#description'] = t('Prevent icons from being loaded without disabling the module. For example, if you plan to use the Backdrop core icons API only.');
   $form['source']['fontawesome']['local']['#description'] = t('Adding a local version of the Font Awesome library can enable you to provide a slimmed down version with just the icons needed for the site, thereby improving site performance.');
   $form['source']['fontawesome']['other']['#description'] = t('If the Font Awesome library is added elsewhere, such as within the theme, then it does not need to be loaded by this module.');
 

@@ -79,3 +79,39 @@ function font_awesome_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_icon_info().
+ */
+function font_awesome_icon_info() {
+  return _font_awesome_load_icons();
+}
+
+/**
+ * Loads the icons from the Font Awesome icons into a keyed array.
+ */
+function _font_awesome_load_icons() {
+  $icons = cache_get('font_awesome_icons_array');
+  if (!empty($icons)) {
+    return $icons->data;
+  }
+
+  $icons = array();
+  $subpaths = array('brands', 'regular', 'solid');
+  foreach ($subpaths as $subpath) {
+    $icon_directory = backdrop_get_path('module', 'font_awesome') . '/icons/' . $subpath;
+    $icon_list = scandir($icon_directory);
+    foreach ($icon_list as $icon) {
+      if (substr($icon, -4) == '.svg') {
+        $icon_name = substr($icon, 0, -4);
+        $icons['font-awesome-' . $icon_name] = array(
+          'name' => $icon_name,
+          'directory' => $icon_directory,
+        );
+      }
+    }
+  }
+
+  cache_set('font_awesome_icons_array', $icons, 'cache', CACHE_PERMANENT);
+  return $icons;
+}

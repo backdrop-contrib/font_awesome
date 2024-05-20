@@ -13,6 +13,8 @@ if (module_exists('font_awesome')) {
 }
 ```
 
+Font Awesome icons are also exposed to the core Backdrop icon API.
+
 Installation
 ------------
 
@@ -37,6 +39,10 @@ You can also select 'Other' if the icons will be loaded via the theme or
 possibly a custom module, but you still need this module to enable Font Awesome
 Field, as a dependency to another module or to enable enhancements within
 another module. Loading this way also enables you to customise the library.
+
+You can use 'None' if you only plan to use the locally-provided SVGs through
+Backdrop's core icon API and you don't want the Font Awesome CSS to be loaded
+automatically. (Backdrop 1.28.0 and higher).
 
 Issues
 ------
