@@ -2,5 +2,9 @@ name = Font Awesome
 description = Include Font Awesome icons via CSS classes in your website.
 backdrop = 1.x
 type = module
+
+maintainers[yorkshire-pudding] = Martin Price
+maintainers_wanted = TRUE
+
 configure = admin/config/user-interface/font-awesome
 
